@@ -19,7 +19,7 @@ speed = 7
 face_cascade = cv2.CascadeClassifier('Fichiers/haarcascade_frontalface_alt.xml')
 imageBandit = 0
 alphaBandit = 0
-imageJail = cv2.imread('Images/Projet/prison.png')
+imageJail = cv2.imread('Projet/prison.png')
 imgHeight, imgWidth, imgDepth = [0, 0, 0]
 
 bill_max = 25
@@ -47,8 +47,8 @@ def remove_all_filter():
 def apply_all_filter():
     global colorFilter, moneyFilter, jailFilter, backgroundFilter, detectionVisage, alphaBandit, imageBandit
     colorFilter = moneyFilter = jailFilter = backgroundFilter = True
-    imageBandit = cv2.imread('Images/Projet/bandit.png')
-    alphaBandit = cv2.imread('Images/Projet/bandit-alpha.png')
+    imageBandit = cv2.imread('Projet/bandit.png')
+    alphaBandit = cv2.imread('Projet/bandit-alpha.png')
     alphaBandit = alphaBandit.astype(float) / 255
     imageBandit = imageBandit.astype(float)
     detectionVisage = True
@@ -86,11 +86,11 @@ def toggle_mask_bandit():
 def toggle_face_detection(id):
     global imageBandit, alphaBandit, imgHeight, imgWidth, imgDepth
     if id == 0:
-        imageBandit = cv2.imread('Images/Projet/bandit.png')
-        alphaBandit = cv2.imread('Images/Projet/bandit-alpha.png')
+        imageBandit = cv2.imread('Projet/bandit.png')
+        alphaBandit = cv2.imread('Projet/bandit-alpha.png')
     elif id == 1:
-        imageBandit = cv2.imread('Images/Projet/bandit2.png')
-        alphaBandit = cv2.imread('Images/Projet/bandit2-alpha.png')
+        imageBandit = cv2.imread('Projet/bandit2.png')
+        alphaBandit = cv2.imread('Projet/bandit2-alpha.png')
 
     imgHeight, imgWidth, imgDepth = imageBandit.shape
     alphaBandit = alphaBandit.astype(float) / 255
